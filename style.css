@@ -26,7 +26,7 @@ header {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.521);
   border-radius: 5px;
   border: 1px var(--color3) solid;
-  backdrop-filter: blur(40px); /*arrière plan flou*/
+  backdrop-filter: blur(10px); /*arrière plan flou*/
 }
 
 nav {
@@ -54,7 +54,7 @@ body {
 
 .title {
   padding: 1em;
-  margin: 1em;
+  margin: 0.25em;
   display: grid;
   grid-template-columns: 10% 90%;
   width: 100vw;
@@ -65,30 +65,44 @@ body {
 .card {
   background: rgba(0, 0, 0, 0.507);
   width: calc(100% - 50px); /*fait des calculs*/
+  margin-top: 10%;
+  margin-bottom: 10%;
   padding: 20px 20px 6px;
   box-shadow: 0 0 0 black;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.521);
   border-radius: 5px;
-  backdrop-filter: blur(20px); /*arrière plan flou*/
+  backdrop-filter: blur(15px); /*arrière plan flou*/
   display: grid;
   grid-template-columns: 20% 80%;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   grid-template-areas:
     "sb cont cont"
-    "sb cont cont"
-    "sb menu menu";
+    "sb cont cont";
 }
 
 .sidebar {
   grid-area: sb;
+  border: var(--color1) solid 1px;
+  border-radius: 6px;
 }
 
 .container {
   grid-area: cont;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "i m"
+    "i m";
 }
 
-.mainMenuOverlay {
-  grid-area: menu;
+.grid-container {
+  grid-area: m;
+  padding: 2em;
+}
+
+.menu {
+  grid-area: i;
 }
 
 .card::before {
@@ -96,7 +110,7 @@ body {
   position: absolute; /*libère l'elt, on le mets où on veut*/
   top: 14px;
   right: 20px;
-  font-size: 2.4rem;
+  font-size: 1rem;
 }
 
 h1 {
@@ -123,11 +137,6 @@ h1::after {
   100% {
     transform: translateX(-50%) scaleX(1);
   }
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 20% 80%;
 }
 
 .polygon-container {
@@ -185,131 +194,9 @@ p::selection {
 }
 
 /******Checkbox*****/
-.checkbox-container {
-  display: flex;
-  justify-content: space-around;
-  margin: 20px 0 30px;
-  perspective: 40px; /*pour la 3D voir label 2*/
-}
 
 input[type="checkbox"] {
   display: none;
-}
-
-input[type="checkbox"]:checked + label {
-  background: var(--color2);
-  color: var(--color3);
-  transform: scale(1.1);
-  filter: brightness(115%);
-}
-label {
-  cursor: pointer;
-  border: 1px solid var(--color1);
-  background: var(--color3);
-  padding: 10px;
-  border-radius: 5px;
-  transition: 0.2s;
-  user-select: none;
-}
-label:first-of-type:hover {
-  /*Animation sur premier label*/
-  animation: label1 1s infinite linear;
-}
-
-@keyframes label1 {
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-label:nth-child(4):hover {
-  /*selection 4ème label enfant*/
-  animation: label2 3s infinite linear;
-}
-/*pour la 3D NE PAS OUBLIER LA PERSPECTIVE SUR LE PARENT*/
-@keyframes label2 {
-  33% {
-    transform: translateZ(30px);
-  }
-  66% {
-    transform: translateZ(-40px);
-  }
-  100% {
-    transform: translateZ(30px);
-  }
-}
-
-.e-mail {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.e-mail input {
-  padding: 10px;
-  border-radius: 5px;
-  outline: none;
-  border: 3px solid transparent;
-  transition: 0.3s;
-  text-align: center;
-  font-size: 1.1rem;
-  color: var(--color1);
-  min-width: 150px;
-  width: 35%;
-  max-width: 300px;
-}
-input[type="text"]:focus {
-  background: transparent;
-  border: 3px solid var(--color2);
-  border-radius: 150px;
-}
-input [type="text"]::placeholder {
-  color: var(--color2);
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-
-button {
-  cursor: pointer;
-  background: var(--color2);
-  border: none;
-  font-size: 1.3rem;
-  padding: 10px 20px;
-  border-radius: 150px;
-  margin: 0 auto;
-  display: block; /*élargie sur oute la zone*/
-  transition: 0.1s;
-}
-
-button:hover {
-  letter-spacing: 2px;
-}
-
-button:active {
-  transform: scale(1.2);
-  background: yellow;
-  color: greenyellow;
-}
-
-button:hover + a,
-a:hover {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-a {
-  color: var(--color2);
-  text-align: center;
-  display: block;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: 0.3s;
-}
-
-a:visited {
-  color: var(--color1);
 }
 
 /********Animation vaisseau*********/
@@ -379,6 +266,186 @@ img {
   }
 }
 
-/* Début integration code CSS menu circulaire => source  */
+/* Début integration code CSS menu circulaire => source codepen/Kapilnemo */
 
+.menu {
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -25px;
+  margin-top: -25px;
+}
+
+.btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 70px;
+  position: absolute;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+  color: #03a9f4;
+}
+
+.btn {
+  background: #eceff1;
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn:not(:first-child) {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  z-index: -2;
+
+  -webkit-transition: all 0.6s cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  transition: all 0.6s cubic-bezier(0.87, -0.41, 0.19, 1.44);
+}
+
+.btn:nth-child(2) {
+  top: 0px;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.btn:nth-child(3) {
+  top: 0px;
+  left: 0px;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+.btn:nth-child(4) {
+  left: 0px;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+.btn:nth-child(5) {
+  top: 0px;
+  left: 0px;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+.btn:nth-child(6) {
+  top: 0px;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+.btn:nth-child(7) {
+  top: 0px;
+  left: 0px;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+.btn:nth-child(8) {
+  left: 0px;
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+.btn:nth-child(9) {
+  top: 0px;
+  left: 0px;
+  -webkit-transition-delay: 0.7s;
+  transition-delay: 0.7s;
+}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(2) {
+  top: -150px;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(3) {
+  top: -100px;
+  left: 100px;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(4) {
+  left: 150px;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(5) {
+  top: 100px;
+  left: 100px;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(6) {
+  top: 150px;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(7) {
+  top: 100px;
+  left: -100px;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(8) {
+  left: -150px;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(9) {
+  top: -100px;
+  left: -100px;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+.menuBtn,
+.closeBtn {
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.closeBtn {
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+input#toggle:checked ~ #show-menu .btn .menuBtn {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+input#toggle:checked ~ #show-menu .btn .closeBtn {
+  transform: translateY(0px);
+  opacity: 1;
+}
 /* Fin intégration menu circulaire */
+
+footer {
+  background: var(--color3);
+  width: 100%;
+  color: var(--color2);
+}
+
+footer p {
+  align-items: center;
+  text-align: center;
+  padding: 1em;
+}
