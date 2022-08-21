@@ -5,76 +5,166 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <title>IFC-JS-MODEL-CHECKER</title>
+    <link rel="icon" type="image/x-icon" href="./static/favicon.ico" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Acceuil</title>
   </head>
 
   <body>
-    <header>
-      <nav>
-        <h2>BimCheck</h2>
-        <ul>
-          <li>Acceuil</li>
-          <li>Qui sommes-nous</li>
-          <li>Blog</li>
-          <li>Contact</li>
-          <li id="language">FR | EN</li>
-        </ul>
-      </nav>
-    </header>
-    <div class="main-body">
-      <div class="title">
+    <!-- <span class="mouse" id="cursor"></span>
+    <span class="mouse" id="mouse1"></span>
+    <span class="mouse" id="mouse2"></span> -->
+    <nav>
+      <div class="main-polygon">
         <div class="polygon-container">
           <div class="polygon">
             <img src="./assets/ifcjs_logo.png" alt="ifcjs_logo" />
           </div>
         </div>
-        <h1>Ifc.js model checker</h1>
+        <h2>BimCheck</h2>
+      </div>
+      <ul>
+        <li><a href="#acceuil">Acceuil</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#exemple">Exemple</a></li>
+        <li><a href="#nous">Qui sommes-nous</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li id="language">FR | EN</li>
+      </ul>
+    </nav>
+
+    <header>
+      <div class="title" id="acceuil">
+        <h1>Acceuil</h1>
       </div>
       <div class="body-text">
         <p>
-          Ce site a été monté dans le cadre de la vulgarisation de l'openBIM en
-          utilisant la librairie IFC.JS. Il rend l'utilisation du BIM simple et
-          accessible directement à travers votre navigateur web sans installer
-          de logiciels. Nous enrichons au fur et à mesure la galerie avec des
-          cas d'usage simple et utile pour les différents parties prenantes.
-          BimCheck est un lieu unique pour révéler le niveau BIM de votre projet
-          avec une approche baséé sur la data et la visualisation 3D.
+          Ce site a été monté dans le cadre de la vulgarisation de l'openBIM.
+          Grâce à la librairie open source IFC.JS, ce site rend l'utilisation du
+          BIM simple et accessible directement à travers votre navigateur web
+          sans installer de logiciels. Nous enrichissons au fur et à mesure la
+          galerie avec des cas d'usage simple et utile pour les différents
+          parties prenantes d'un projet de construction. BimCheck est un lieu
+          unique pour révéler le niveau BIM de votre projet avec une approche
+          baséé sur la data et la visualisation 3D.
         </p>
       </div>
-
+    </header>
+    <div id="galerie" class="title">
+      <h1>Galerie</h1>
+    </div>
+    <!-- start Section from ifc.js crash Course -->
+    <section id="projects-container" class="project-list">
       <div class="card">
-        <div class="sidebar">
-          <p>MENU</p>
-        </div>
-        <div class="container">
-          <div class="grid-container">
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore
-              veritatis laboriosam exercitationem consequuntur libero, tenetur,
-              mollitia quasi suscipit culpa id fuga aut. Alias id dolor
-              pariatur, quaerat reprehenderit, odio velit dolores quam iusto
-              officiis esse eius consequuntur! Dicta quaerat aut natus pariatur
-              quis facilis voluptas, eaque aspernatur soluta earum cupiditate
-              labore quasi inventore harum minus dolorem eligendi architecto
-              necessitatibus magnam!
-            </p>
-          </div>
-          <!-- Début integration menu circulaire -->
-          <!-- Signature =>  codepen/Kapilnemo-->
-          <div class="menu"></div>
-          <!-- Fin integration menu circulaire -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M18 10.031v-6.423l-6.036-3.608-5.964 3.569v6.499l-6 3.224v7.216l6.136 3.492 5.864-3.393 5.864 3.393 6.136-3.492v-7.177l-6-3.3zm-1.143.036l-4.321 2.384v-4.956l4.321-2.539v5.111zm-4.895-8.71l4.272 2.596-4.268 2.509-4.176-2.554 4.172-2.551zm-10.172 12.274l4.778-2.53 4.237 2.417-4.668 2.667-4.347-2.554zm4.917 3.587l4.722-2.697v5.056l-4.722 2.757v-5.116zm6.512-3.746l4.247-2.39 4.769 2.594-4.367 2.509-4.649-2.713zm9.638 6.323l-4.421 2.539v-5.116l4.421-2.538v5.115z"
+          />
+        </svg>
+        <h2>Sample project</h2>
+        <a class="button" href="./model-viewer.html">Model</a>
+      </div>
+    </section>
+    <!-- End Section from ifc.js crash Course -->
+    <div id="exemple" class="title">
+      <h1>Exemple</h1>
+    </div>
+    <div class="main-example">
+      <iframe
+        id="model-example"
+        src="https://ifcjs.github.io/ifcjs-crash-course/sample-apps/01/"
+        frameborder="0"
+      ></iframe>
+    </div>
+    <div id="nous" class="title">
+      <h1>Qui sommes-nous</h1>
+    </div>
+    <section class="who_we_are">
+      <div class="who_we_are_left">
+        <!-- image modified by Bamba and inspired from image pinterest.fr/ -->
+        <img src="./assets/image_logo.png" alt="image_freedom" />
+      </div>
+      <div class="who_we_are_right">
+        <h1>Qui sommes-nous ?</h1>
+        <br />
+        <h2>Qui suis-je pour le moment?</h2>
+        <br />
+        <p>
+          Un ingénieur qui croit à l'open-BIM et qui voit IFC.JS comme l'Excel
+          du BIM, mais un Excel sur le navigateur. Le reste n'est pas important.
+        </p>
+      </div>
+    </section>
+    <div id="contact" class="title">
+      <h1>Contacts</h1>
+    </div>
+    <section class="contact">
+      <h2 class="intro">
+        We're working hard to improve our website and we'll back on soon. Stay
+        tuned for something amazing!. <br />Subscribe to be notified.
+      </h2>
+      <div id="subscribe">
+        <form action="" method="post" onsubmit="">
+          <p>
+            <input
+              name=""
+              value="Enter your e-mail (coming soon)"
+              type="text"
+              id=""
+            />
+            <input type="button" value="Submit" />
+          </p>
+        </form>
+        <div id="socialIcons">
+          <ul>
+            <li><a href="" title="Twitter" class="twitterIcon"></a></li>
+            <li><a href="" title="facebook" class="facebookIcon"></a></li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/bamba-thiam-7740308a/"
+                target="_blank"
+                title="linkedIn"
+                class="linkedInIcon"
+              ></a>
+            </li>
+            <li><a href="" title="Pintrest" class="pintrestIcon"></a></li>
+          </ul>
         </div>
       </div>
+    </section>
+    <footer id="footer" class="top-space">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Bamba THIAM <span id="getCurrentDate"></span></p>
+        </div>
+      </div>
+    </footer>
+    <div class="vaisseau">
+      <img src="./assets/spaceship.png" alt="spaceship" />
     </div>
-
-    <img src="./assets/spaceship.png" alt="spaceship" />
   </body>
-  <footer>
-    <p>Footer</p>
-  </footer>
-  <script src="./index.js"></script>
+
+  <script type="module" src="./app.js"></script>
+  <script type="text/javascript">
+    var dt = new Date();
+    document.getElementById("getCurrentDate").innerHTML = dt.getFullYear();
+  </script>
 </html>
