@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url(../assets/fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
+  list-style: none;
+  --light-gray: rgb(123, 123, 123);
+  --light-blue: #8dbafff0;
+  --translucent-white: rgba(255, 255, 255, 0.7);
+
+  --normal-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  --blur-filter: blur(8px);
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+#three-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+#file-input {
+  z-index: 1;
+  position: absolute;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--translucent-white);
+  box-shadow: var(--normal-shadow);
+  backdrop-filter: var(--blur-filter);
+  text-align: center;
+}
+
+#file-input:hover {
+  z-index: 1;
+  position: absolute;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--translucent-white);
+  box-shadow: var(--normal-shadow);
+  backdrop-filter: var(--blur-filter);
+  text-align: center;
+}
+
+.simple-card-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+
+/* From uiverse.io by @adamgiebl */
+.simple-card {
+  margin: 1rem;
+  z-index: 1;
+  width: 200px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--translucent-white);
+  box-shadow: var(--normal-shadow);
+  backdrop-filter: var(--blur-filter);
+  text-align: center;
+}
