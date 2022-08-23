@@ -1,3 +1,3 @@
-# Ifc_js_project_crash_courses
+# Ifc_js
 
-## My project after finishing ifc.js crash courses.
+## My first app.
