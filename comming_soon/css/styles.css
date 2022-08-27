@@ -11,6 +11,7 @@ body {
   width: 100%;
   margin: 0;
   background-size: cover;
+  box-sizing: border-box;
   background: url(../images/coming_soon.jpeg) fixed center/cover;
 }
 h1 {

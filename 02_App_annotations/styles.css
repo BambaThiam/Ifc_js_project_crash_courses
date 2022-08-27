@@ -29,13 +29,6 @@ title {
   width: 100vw;
 }
 
-#three-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  outline: none;
-}
-
 #file-input {
   z-index: 1;
   position: absolute;
@@ -79,6 +72,34 @@ title {
   backdrop-filter: var(--blur-filter);
   text-align: center;
 }
+
+#viewer-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  outline: none;
+  width: 70%;
+  height: 70%;
+  /* border: black solid 3px;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px); */
+}
+
+.ifcjs-dimension-preview {
+  width: 1rem;
+  height: 1rem;
+  background-color: #ffa50f;
+  border-radius: 1rem;
+  opacity: 0.5;
+}
+
+/* .ifcjs-dimension-label {
+  background-color: black;
+  color: white;
+  padding: 4px;
+  border-radius: 4px;
+} */
 
 /* suscription inspired From uiverse.io by @sssynk */
 

@@ -88,3 +88,24 @@ input.addEventListener(
   },
   false
 );
+
+// Display / Hide
+
+const fenetre = document.querySelector(".activator");
+const fenetre_contain = document.querySelector(".card-all");
+const message = document.querySelector(".simple-card");
+
+fenetre_contain.style.display = "none";
+message.style.display = "none";
+
+fenetre.addEventListener("click", () => {
+  console.log("hello world");
+
+  if (fenetre_contain.style.display === "none") {
+    fenetre_contain.style.display = "flex";
+    message.style.display = "flex";
+  } else {
+    fenetre_contain.style.display = "none";
+    message.style.display = "none";
+  }
+});

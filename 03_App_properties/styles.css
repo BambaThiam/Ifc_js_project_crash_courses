@@ -17,11 +17,6 @@
   --blur-filter: blur(8px);
 }
 
-html,
-body {
-  overflow: hidden;
-}
-
 title {
   background: pink;
   font-weight: 1000;
@@ -29,26 +24,79 @@ title {
   width: 100vw;
 }
 
-#three-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
+html,
+body {
+  overflow: hidden;
+}
+/* .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+.ifc-property-menu {
+  border: 1px solid gray;
+  width: 20rem;
+  position: absolute;
+  background-color: white;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--translucent-white);
+  box-shadow: var(--normal-shadow);
+  backdrop-filter: var(--blur-filter);
+  top: 10%;
+  /* left: 11%;
+  transform: translate(-50%, -50%); */
+}
+
+.ifc-property-item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0.5rem;
+  border-bottom: solid 1px gray;
+}
+
+.ifc-property-value {
+  width: 100%;
+  text-align: right;
+}
+
+#viewer-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-30%, -50%);
   outline: none;
+  width: 70%;
+  height: 70%;
+  border: black solid 3px;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 #file-input {
-  z-index: 1;
+  z-index: 4;
   position: absolute;
   margin: 1rem;
+  /* margin-left: 50%; */
   padding: 1rem;
   border-radius: 1rem;
   background: var(--translucent-white);
   box-shadow: var(--normal-shadow);
   backdrop-filter: var(--blur-filter);
   text-align: center;
+  align-items: center;
+  width: auto;
+  /* transform: translate(-50%, 0); */
 }
 
-#file-input:hover {
+/* #file-input:hover {
   z-index: 1;
   position: absolute;
   margin: 1rem;
@@ -58,13 +106,14 @@ title {
   box-shadow: var(--normal-shadow);
   backdrop-filter: var(--blur-filter);
   text-align: center;
-}
+} */
 
 .simple-card-container {
   display: flex;
   justify-content: center;
   position: absolute;
   width: 100%;
+  z-index: 2;
 }
 
 /* From uiverse.io by @adamgiebl */
@@ -81,7 +130,6 @@ title {
 }
 
 /* suscription inspired From uiverse.io by @sssynk */
-
 a {
   text-decoration: none;
 }
@@ -99,13 +147,16 @@ a:hover {
 
 .souscription {
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: row;
-  text-align: center;
-  margin-bottom: 20px;
+  /* text-align: center; */
+  /* margin-bottom: 20px; */
   justify-content: flex-end;
   align-items: flex-start;
+  align-content: flex-end;
   flex-wrap: wrap;
+  z-index: 3;
 }
 
 .activator {
@@ -134,7 +185,7 @@ a:hover {
 }
 
 .card-all {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -143,6 +194,7 @@ a:hover {
   align-items: flex-end;
   flex-wrap: wrap;
   z-index: 1;
+  scale: 80%;
 }
 
 .card_sus {
@@ -233,21 +285,34 @@ a:hover {
 /* ************** RESPONSIVE *************** */
 
 /* Tablette */
-@media (max-width: 800px) {
-  .card-all {
+@media (max-width: 900px) {
+  * {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    display: block;
+    align-items: center;
+    /* width: 100%; */
+  }
+
+  .card-all {
+    display: flex;
     position: absolute;
-    scale: 65%;
-    flex-wrap: nowrap;
-    margin-top: 100px;
+    flex-direction: column;
+    position: absolute;
+    scale: 55%;
+    /* flex-wrap: nowrap; */
+    margin-top: auto;
+    align-items: flex-end;
     justify-content: flex-end;
+    height: 100vh;
+    width: 100vw;
   }
 
   .simple-card-container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
     /* display: block; */
     margin: auto;
     /* z-index: 2; */
@@ -268,6 +333,21 @@ a:hover {
     justify-content: center;
     margin: 0 auto;
   }
+
+  .souscription {
+    width: 100vw;
+    /* text-align: center;
+    justify-content: flex-end;
+    align-content: flex-end; */
+  }
+  .ifc-property-menu {
+    scale: 90%;
+    margin-left: auto;
+  }
+
+  #viewer-container {
+    scale: 90%;
+  }
 }
 
 /* Mobile */
@@ -278,6 +358,7 @@ a:hover {
     text-align: center;
     display: block;
     align-items: center;
+    /* margin: auto; */
     /* width: 100%; */
   }
   .souscription {
@@ -288,24 +369,25 @@ a:hover {
 
   .card-all {
     display: flex;
-    flex-direction: row;
-    /* position: absolute; */
-    scale: 35%;
-    /* width: 100vw;
-    height: 100vh; */
-    /* align-items: center;
-    text-align: center; */
+    flex-direction: column;
+    position: absolute;
+    scale: 70%;
+    width: 100vw;
+    height: 100vh;
+    align-items: flex-end;
+    text-align: end;
     justify-content: flex-end;
   }
   .card-all * {
     text-align: center;
     align-items: center;
-    margin-left: auto;
+    justify-content: center;
+    margin: auto;
   }
 
   .simple-card {
-    margin-top: 80px;
-    scale: 50%;
+    margin-top: 120px;
+    scale: 60%;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -320,6 +402,23 @@ a:hover {
   }
 
   .activator {
+    margin: 0px;
+  }
+  .ifc-property-menu {
+    margin-left: auto;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  #viewer-container {
+    scale: 90%;
+    position: absolute;
+    align-items: center;
     margin: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }

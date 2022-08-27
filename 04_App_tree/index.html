@@ -2,25 +2,54 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="../static/favicon.ico" />
+    <link rel="icon" href="../../../favicon.ico" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="./styles.css" />
-    <title>IFC.js-viewer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <title>IFC tree app</title>
   </head>
   <body>
     <div class="simple-card-container">
       <div class="simple-card">
-        Upload your ifc file and view it in a simple way
+        Upload your ifc file and pull down the menu to see the ifc tree
       </div>
     </div>
+    <div id="viewer-container"></div>
     <input type="file" id="file-input" />
-    <canvas id="three-canvas"></canvas>
-    <!-- Souscription button from uiverse.io by sssynk -->
+    <div class="ifc-tree-menu">
+      <ul id="myUL">
+        <li id="tree-root">
+          <span class="caret">Waiting ifc file</span>
+          <ul class="nested">
+            <li>waiting ifc file</li>
+            <li>waiting ifc file</li>
+            <li>
+              <span class="caret">waiting ifc file</span>
+              <ul class="nested">
+                <li>waiting ifc file</li>
+                <li>waiting ifc file</li>
+                <li>
+                  <span class="caret">waiting ifc file</span>
+                  <ul class="nested">
+                    <li>waiting ifc file</li>
+                    <li>waiting ifc file</li>
+                    <li>waiting ifc file</li>
+                    <li>waiting ifc file</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- Souscription inspired from uiverse.io by sssynk -->
     <div class="souscription">
       <div class="activator">
         <button>sign up</button>
@@ -94,8 +123,8 @@
           </div>
         </div>
       </div>
-      <!-- End souscription button -->
     </div>
-    <script src="bundle.js"></script>
+    <!-- End souscription button -->
+    <script src="./bundle.js"></script>
   </body>
 </html>

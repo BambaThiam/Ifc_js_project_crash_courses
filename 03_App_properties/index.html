@@ -2,25 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="../static/favicon.ico" />
+    <link rel="icon" href="../../../favicon.ico" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="./styles.css" />
-    <title>IFC.js-viewer</title>
+    <!-- <link rel="stylesheet" href="../style.css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <title>IFC properties</title>
   </head>
   <body>
     <div class="simple-card-container">
       <div class="simple-card">
-        Upload your ifc file and view it in a simple way
+        Upload your ifc file and click on the objects to view the properties
       </div>
     </div>
-    <input type="file" id="file-input" />
-    <canvas id="three-canvas"></canvas>
-    <!-- Souscription button from uiverse.io by sssynk -->
+    <div class="container">
+      <div id="viewer-container"></div>
+      <input type="file" id="file-input" />
+      <div class="ifc-property-menu">
+        <div class="ifc-property-item">
+          <div>Key</div>
+          <div class="ifc-property-value">Value</div>
+        </div>
+        <div id="ifc-property-menu-root"></div>
+      </div>
+    </div>
+    <!-- Souscription inspired from uiverse.io by sssynk -->
     <div class="souscription">
       <div class="activator">
         <button>sign up</button>
@@ -94,8 +106,8 @@
           </div>
         </div>
       </div>
-      <!-- End souscription button -->
     </div>
-    <script src="bundle.js"></script>
+    <!-- End souscription button -->
+    <script src="./bundle.js"></script>
   </body>
 </html>
