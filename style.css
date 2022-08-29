@@ -331,6 +331,19 @@ header {
   /* margin: 20px 10px; */
 }
 
+/* video_presentation */
+.video iframe {
+  width: 100vw;
+  max-width: 780px;
+  height: 56.25vw;
+}
+
+@media (min-width: 780px) {
+  iframe {
+    height: calc(780px * 0.5628205128205128);
+  }
+}
+
 .souscription {
   flex: 50%;
   width: 100%;
@@ -615,6 +628,19 @@ iframe {
   position: absolute;
   width: 100%;
 }
+
+/* From uiverse.io by @adamgiebl */
+/* .simple-card {
+  margin: 1rem;
+  z-index: 1;
+  width: 200px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--translucent-white);
+  box-shadow: var(--normal-shadow);
+  backdrop-filter: var(--blur-filter);
+  text-align: center;
+} */
 
 /******** End code from ifc.js crash courses ******/
 
@@ -989,6 +1015,10 @@ footer {
   }
 }
 
+/* .video {
+  width: 80vw;
+} */
+
 /* Tablette 2 */
 @media (max-width: 1100px) {
   /* * {
@@ -1073,6 +1103,10 @@ footer {
   }
 }
 
+/* .video {
+  width: 80vw;
+} */
+
 /* Tablette */
 @media (max-width: 800px) {
   * {
@@ -1107,6 +1141,11 @@ footer {
     width: 50%;
     height: 50%;
   }
+
+  /* .video {
+    width: 80vw;
+    height: 400px;
+  } */
 
   /* h1 {
     font-size: 2.5rem;
